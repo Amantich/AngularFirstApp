@@ -1,0 +1,33 @@
+<div class="p-3 bg-danger">
+  <div class="card">
+    <div class="card-body">
+      <div class="">
+        <input type="text" [(ngModel)]="keyword" />
+        <button (click)="search()" class="btn btn-outline-success">
+          Search
+        </button>
+      </div>
+      <div class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody *ngIf="products">
+          <tr *ngFor="let p of products">
+            <td>{{ p.id }}</td>
+            <td>{{ p.name }}</td>
+            <td>{{ p.price }}</td>
+            <td>
+              <button (click)="deleteProduct(p)" class="btn btn-danger">
+                Delete
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </div>
+    </div>
+  </div>
+</div>
